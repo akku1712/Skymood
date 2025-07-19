@@ -3,32 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SkyMood Weather</title>
-  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1e1e2f"/>
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <title>SkyMood Weather</title>
 </head>
 <body>
-  <div id="app">
+  <div class="app-container">
     <header>
       <h1>🌤️ SkyMood</h1>
-      <select id="language-select"></select>
+      <p class="tagline">Real-time Weather & Environmental Mood</p>
     </header>
-    <section id="weather-container">
-      <h2 id="location"></h2>
-      <div id="weather-visuals"></div>
-      <p id="temperature"></p>
-      <p id="condition"></p>
-      <p id="aqi"></p>
-      <p id="alerts"></p>
-      <p id="sun-info"></p>
-    </section>
+
+    <main>
+      <section class="search">
+        <input type="text" id="cityInput" placeholder="Enter City..." />
+        <button onclick="getWeather()">Search</button>
+      </section>
+
+      <section class="weather-display">
+        <div id="weatherInfo"></div>
+        <div id="aqiInfo"></div>
+        <div id="alertsInfo"></div>
+        <div id="sunriseSunsetAR"></div>
+      </section>
+
+      <section class="toggles">
+        <label>
+          <input type="checkbox" id="envToggle" onchange="toggleEnvironmentalAlerts()">
+          Live Environmental Alerts
+        </label>
+      </section>
+    </main>
+
     <footer>
-      <label>
-        <input type="checkbox" id="overlay-toggle" /> Live Environmental Overlays
-      </label>
+      <p>&copy; 2025 SkyMood | Made with ☁️</p>
     </footer>
   </div>
+
   <script src="app.js"></script>
   <script src="ar.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
 </body>
 </html>
