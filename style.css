@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to top, #74ebd5, #ACB6E5);
+  color: #222;
+  text-align: center;
+  padding: 20px;
+}
+header h1 {
+  font-size: 2rem;
+}
+#weather-container {
+  margin-top: 30px;
+}
+#weather-visuals {
+  height: 200px;
+  margin-bottom: 20px;
+}
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+}
