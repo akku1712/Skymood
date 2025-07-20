@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkyMood - Alerts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+<body>
+  <div class="bg-overlay"></div>
+  <main class="container">
+    <header class="top-bar">
+      <h1><i class="fa-solid fa-triangle-exclamation"></i> Weather Alerts</h1>
+      <button title="Back to Home" onclick="location.href='index.html'">
+        <i class="fa-solid fa-house"></i>
+      </button>
+    </header>
+    <form class="city-search" id="alertCityForm">
+      <input type="text" id="alertCityInput" placeholder="Enter city..." autocomplete="off"/>
+      <button type="submit" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+    <section id="alertsMain">
+      <!-- Alerts will appear here -->
+    </section>
+  </main>
+  <footer>
+    <nav>
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="forecast.html"><i class="fa-solid fa-calendar-week"></i> Forecast</a>
+      <a href="aqi.html"><i class="fa-solid fa-leaf"></i> Air Quality</a>
+      <a href="alerts.html" class="active"><i class="fa-solid fa-triangle-exclamation"></i> Alerts</a>
+    </nav>
+  </footer>
+  <script src="alerts.js"></script>
+</body>
+</html>
