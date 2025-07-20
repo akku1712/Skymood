@@ -283,3 +283,46 @@ footer a.active,footer a:hover {
   color: #7e9dbe;
 }
 
+.aqi-card {
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 2rem 1rem 1.2rem 1rem;
+  text-align: center;
+  margin: 1.2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.aqi-index {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  border-radius: 2rem;
+  padding: 0.4rem 1.3rem;
+  color: white;
+  display: inline-block;
+}
+.aqi-good { background: #22c55e; }
+.aqi-moderate { background: #facc15; color: #322b10; }
+.aqi-poor { background: #f59e42; }
+.aqi-unhealthy { background: #ef4444; }
+.aqi-veryunhealthy { background: #9e1985; }
+.aqi-hazardous { background: #641414; }
+.aqi-status {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: .3rem 0 .7rem 0;
+}
+.aqi-health-tip {
+  margin-top: .7rem;
+  font-size: .94rem;
+  background: #e4feee;
+  color: #165639;
+  border-radius: .9rem;
+  padding: .7rem 1rem .7rem 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 320px;
+}
+
