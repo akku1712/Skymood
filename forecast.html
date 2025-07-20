@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkyMood - 7-Day Forecast</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+<body>
+  <div class="bg-overlay" id="dynamicBg"></div>
+  <main class="container">
+    <header class="top-bar">
+      <h1><i class="fa-solid fa-calendar-week"></i> 7-Day Forecast</h1>
+      <button title="Back to Home" onclick="location.href='index.html'">
+        <i class="fa-solid fa-house"></i>
+      </button>
+    </header>
+    <form class="city-search" id="forecastCityForm">
+      <input type="text" id="forecastCityInput" placeholder="Enter city..." autocomplete="off"/>
+      <button type="submit" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+    <section id="forecastCards" class="forecast-cards">
+      <!-- 7-day cards will be injected here by JS -->
+    </section>
+  </main>
+  <footer>
+    <nav>
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="forecast.html" class="active"><i class="fa-solid fa-calendar-week"></i> Forecast</a>
+      <a href="aqi.html"><i class="fa-solid fa-leaf"></i> Air Quality</a>
+      <a href="alerts.html"><i class="fa-solid fa-triangle-exclamation"></i> Alerts</a>
+    </nav>
+  </footer>
+  <script src="forecast.js"></script>
+</body>
+</html>
