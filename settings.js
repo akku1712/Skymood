@@ -10,7 +10,7 @@ function loadSettings() {
 }
 document.addEventListener("DOMContentLoaded", ()=>{
   loadSettings();
-  document.querySelectorAll('select,input').forEach(el=>{
+  document.querySelectorAll('#settingsUnits, #settingsNotif, #settingsLang').forEach(el=>{
     el.addEventListener('change', saveSettings);
   });
 });
