@@ -23,7 +23,7 @@ function getWeatherIcon(main) {
 
 // ========== API FUNCTIONS ==========
 
-const WEATHER_API_KEY =a4dec6b4af3c5257fdfca056b949c223 "YOUR_OPENWEATHERMAP_KEY"; // <-- Insert your key here!
+const WEATHER_API_KEY ="a4dec6b4af3c5257fdfca056b949c223" "YOUR_OPENWEATHERMAP_KEY"; // <-- Insert your key here!
 const UNSPLASH_KEY = "YOUR_UNSPLASH_KEY"; // <-- Insert your key here!
 
 async function fetchWeather(city, units = 'metric') {
