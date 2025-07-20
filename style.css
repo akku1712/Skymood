@@ -226,3 +226,60 @@ footer a.active,footer a:hover {
 .bg-overlay, .weather-main {
   transition: background .6s, filter .3s;
 }
+
+
+.forecast-cards {
+  display: flex;
+  overflow-x: auto;
+  padding: 1rem 0 0 0.1rem;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+@media (max-width: 600px) {
+  .forecast-cards {
+    flex-direction: row;
+    gap: 0.8rem;
+    padding-bottom: 1rem;
+  }
+}
+.forecast-card {
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  width: 115px;
+  flex-shrink: 0;
+  padding: 1rem 0.7rem 1.1rem 0.7rem;
+  text-align: center;
+  transition: transform .15s;
+}
+.forecast-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  background: #e5f0fb;
+}
+.forecast-card .day {
+  font-weight: 600;
+  font-size: 1.07rem;
+  margin-bottom: .18rem;
+  color: var(--primary);
+}
+.forecast-card .icon {
+  font-size: 2.1rem;
+  margin: .4rem 0;
+  color: var(--secondary);
+}
+.forecast-card .description {
+  font-size: .97rem;
+  margin: 0.1rem 0 0.4rem 0;
+  color: #4f6d7a;
+}
+.forecast-card .temp {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #243055;
+}
+.forecast-card .temp span {
+  font-size: .93rem;
+  font-weight: 400;
+  color: #7e9dbe;
+}
+
