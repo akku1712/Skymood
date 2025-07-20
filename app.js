@@ -1,38 +1,14 @@
-const API_KEY = 'YOUR_OPENWEATHERMAP_API_KEY';
+/* JavaScript for SkyMood Weather App */
 
-document.addEventListener("DOMContentLoaded", () => {
-  navigator.geolocation.getCurrentPosition(async (pos) => {
-    const { latitude, longitude } = pos.coords;
+// Utility: Get user's current coordinates async function getCoordinates() { return new Promise((resolve, reject) => { if (!navigator.geolocation) return reject("Geolocation not supported."); navigator.geolocation.getCurrentPosition( (pos) => resolve({ lat: pos.coords.latitude, lon: pos.coords.longitude }), (err) => reject("Location access denied.") ); }); }
 
-    const cityRes = await fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`);
-    const cityData = await cityRes.json();
-    const cityName = cityData[0]?.name || "Your Location";
-    document.getElementById("location").textContent = cityName;
+// Utility: Fetch weather data from OpenWeatherMap async function getWeather(lat, lon) { const apiKey = "YOUR_OPENWEATHER_API_KEY"; const url = https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric; const response = await fetch(url); return response.json(); }
 
-    const weatherRes = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&units=metric&exclude=minutely,hourly,daily&appid=${API_KEY}`);
-    const data = await weatherRes.json();
+// Utility: Fetch AQI data async function getAQI(lat, lon) { const apiKey = "YOUR_OPENWEATHER_API_KEY"; const url = https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}; const response = await fetch(url); return response.json(); }
 
-    const temp = data.current.temp;
-    const description = data.current.weather[0].description;
-    const icon = data.current.weather[0].icon;
+// Display weather on main page async function displayWeather() { try { const { lat, lon } = await getCoordinates(); const data = await getWeather(lat, lon); const location = document.getElementById("location"); const temperature = document.getElementById("temperature"); const description = document.getElementById("description"); location.textContent = ${data.name}, ${data.sys.country}; temperature.textContent = ${Math.round(data.main.temp)}°C; description.textContent = data.weather[0].description; } catch (err) { console.error(err); } }
 
-    document.getElementById("temperature").textContent = `🌡️ Temp: ${temp}°C`;
-    document.getElementById("condition").textContent = `🌥️ ${description}`;
-    document.getElementById("weather-visuals").innerHTML = `<img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}">`;
+// Display AQI on AQI page async function displayAQI() { try { const { lat, lon } = await getCoordinates(); const data = await getAQI(lat, lon); const aqiVal = data.list[0].main.aqi; const aqiLevel = ["Good", "Fair", "Moderate", "Poor", "Very Poor"][aqiVal - 1]; document.getElementById("aqi-value").textContent = ${aqiVal} - ${aqiLevel}; } catch (err) { console.error(err); } }
 
-    updateSunInfo(data.current.sunrise, data.current.sunset);
+// On Load Events window.onload = function () { if (document.body.classList.contains("home")) displayWeather(); if (document.body.classList.contains("aqi")) displayAQI(); };
 
-    if (data.alerts && data.alerts.length > 0) {
-      const alertMsg = data.alerts.map(a => `⚠️ ${a.event}: ${a.description}`).join('\n\n');
-      document.getElementById("alerts").textContent = alertMsg;
-    } else {
-      document.getElementById("alerts").textContent = "✅ No weather alerts right now.";
-    }
-  });
-});
-
-function updateSunInfo(sunrise, sunset) {
-  const rise = new Date(sunrise * 1000).toLocaleTimeString();
-  const set = new Date(sunset * 1000).toLocaleTimeString();
-  document.getElementById("sun-info").textContent = `🌅 Sunrise: ${rise} | 🌇 Sunset: ${set}`;
-}
