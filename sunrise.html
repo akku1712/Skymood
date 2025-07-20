@@ -9,21 +9,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 </head>
 <body>
-  <div class="bg-overlay"></div>
   <main class="container">
     <header class="top-bar">
       <h1><i class="fa-solid fa-sun"></i> Sunrise & Sunset AR</h1>
-      <button title="Back to Home" onclick="location.href='index.html'">
-        <i class="fa-solid fa-house"></i>
-      </button>
+      <a href="index.html" title="Home"><i class="fa-solid fa-house"></i></a>
     </header>
     <form class="city-search" id="ssCityForm">
       <input type="text" id="ssCityInput" placeholder="Enter city..." autocomplete="off"/>
       <button type="submit" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
-    <section id="ssArView" class="ar-view">
-      <!-- Sunrise/Sunset AR timeline will render here -->
-    </section>
+    <section id="ssArView" class="ar-view"></section>
   </main>
   <footer>
     <nav>
@@ -31,6 +26,7 @@
       <a href="forecast.html"><i class="fa-solid fa-calendar-week"></i> Forecast</a>
       <a href="aqi.html"><i class="fa-solid fa-leaf"></i> Air Quality</a>
       <a href="alerts.html"><i class="fa-solid fa-triangle-exclamation"></i> Alerts</a>
+      <a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
     </nav>
   </footer>
   <script src="sunrise.js"></script>
