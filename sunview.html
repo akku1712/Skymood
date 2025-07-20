@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkyMood | Sunrise & Sunset View</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="sunview-page">
+  <header>
+    <h1>Sunrise & Sunset AR View</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="forecast.html">Forecast</a>
+      <a href="alerts.html">Alerts</a>
+      <a href="settings.html">Settings</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <section class="sun-ar-section">
+    <div class="location-info">
+      <h2>📍 Your Location: <span id="current-location">Loading...</span></h2>
+    </div>
+
+    <div class="sun-times">
+      <h3>🌅 Sunrise: <span id="sunrise">--:--</span></h3>
+      <h3>🌇 Sunset: <span id="sunset">--:--</span></h3>
+    </div>
+
+    <div class="ar-visual">
+      <p>[AR Simulation Placeholder]</p>
+      <p>A real-time AR scene of sunrise/sunset will appear here based on your time and location.</p>
+      <canvas id="sunCanvas"></canvas>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SkyMood by Akki Studio</p>
+  </footer>
+
+  <script src="sky.js"></script>
+</body>
+</html>
