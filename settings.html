@@ -25,17 +25,29 @@
       </div>
       <div class="form-row">
         <label>
-          <span>Notifications:</span>
-          <input type="checkbox" id="settingsNotif"/>
-        </label>
-      </div>
-      <div class="form-row">
-        <label>
           <span>Language:</span>
           <select id="settingsLang">
             <option value="en">English</option>
-            <option value="hi">हिन्दी</option>
+            <option value="hi">Hindi (हिन्दी)</option>
             <option value="fr">Français</option>
+            <option value="zh">中文 (Chinese)</option>
+            <option value="es">Español</option>
+            <option value="ru">Русский (Russian)</option>
+            <option value="ar">العربية (Arabic)</option>
+            <option value="pt">Português</option>
+            <option value="de">Deutsch</option>
+            <option value="ja">日本語 (Japanese)</option>
+            <option value="it">Italiano</option>
+            <option value="ko">한국어 (Korean)</option>
+            <option value="tr">Türkçe</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="th">ไทย (Thai)</option>
+            <option value="ms">Bahasa Melayu</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="bn">বাংলা (Bangla)</option>
+            <option value="pl">Polski</option>
+            <option value="uk">Українська</option>
+            <!-- Add more as desired -->
           </select>
         </label>
       </div>
@@ -43,6 +55,54 @@
         <label>
           <span>Enable AR/VR Features:</span>
           <input type="checkbox" id="settingsArVr"/>
+        </label>
+      </div>
+      <div class="form-row">
+        <label>
+          <span>Notifications:</span>
+          <input type="checkbox" id="settingsNotif"/>
+        </label>
+      </div>
+      <div class="form-row">
+        <label>
+          <span>Theme:</span>
+          <select id="settingsTheme">
+            <option value="dynamic">Dynamic (Auto)</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </label>
+      </div>
+      <div class="form-row">
+        <label>
+          <span>Default City:</span>
+          <input type="text" id="settingsDefaultCity" placeholder="e.g. Paris, New York" />
+        </label>
+      </div>
+      <div class="form-row">
+        <label>
+          <span>Alert Level:</span>
+          <select id="settingsAlertLevel">
+            <option value="all">All Alerts</option>
+            <option value="severe">Severe Only</option>
+            <option value="custom">Custom</option>
+          </select>
+        </label>
+      </div>
+      <div class="form-row">
+        <label>
+          <span>Data Source:</span>
+          <select id="settingsSource">
+            <option value="owm">OpenWeatherMap</option>
+            <option value="aqicn">AQICN (Air Quality)</option>
+            <option value="openaq">OpenAQ</option>
+          </select>
+        </label>
+      </div>
+      <div class="form-row">
+        <label>
+          <span>High Contrast UI:</span>
+          <input type="checkbox" id="settingsContrast"/>
         </label>
       </div>
     </section>
@@ -53,7 +113,7 @@
       <a href="forecast.html"><span class="material-symbols-outlined">calendar_month</span> Forecast</a>
       <a href="aqi.html"><span class="material-symbols-outlined">eco</span> Air Quality</a>
       <a href="alerts.html"><span class="material-symbols-outlined">warning</span> Alerts</a>
-      <a href="settings.html" class="active"><span class="material-symbols-outlined">settings</span> Settings</a>
+      <!-- Settings link REMOVED from the footer -->
     </nav>
   </footer>
   <script src="settings.js"></script>
