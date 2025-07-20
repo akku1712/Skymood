@@ -6,25 +6,24 @@
   <title>SkyMood - Live Weather</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Material+Symbols+Outlined" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 <body>
   <div class="bg-overlay" id="dynamicBg"></div>
   <main class="container">
     <header class="top-bar">
       <h1>
-        <i class="fa-solid fa-cloud-sun" aria-hidden="true"></i> SkyMood
+        <span class="material-symbols-outlined">partly_cloudy_day</span> SkyMood
       </h1>
       <a href="settings.html" id="settingsBtn" title="Settings">
-        <i class="fa-solid fa-gear"></i>
+        <span class="material-symbols-outlined">settings</span>
       </a>
     </header>
     <section class="weather-main">
       <form class="city-search" id="cityForm">
         <input type="text" id="cityInput" placeholder="Enter city..." autocomplete="off"/>
-        <button type="submit" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button type="submit" title="Search"><span class="material-symbols-outlined">search</span></button>
       </form>
       <div class="weather-overview" id="weatherOverview">
         <div class="weather-icon" id="weatherIcon"></div>
@@ -40,22 +39,25 @@
           <span id="location">Fetching location...</span>
         </div>
         <div class="details-bar">
-          <div><i class="fa-solid fa-droplet"></i> <span id="humidity">--</span>%</div>
-          <div><i class="fa-solid fa-wind"></i> <span id="wind">--</span> km/h</div>
-          <div><i class="fa-solid fa-gauge-high"></i> <span id="pressure">--</span> hPa</div>
+          <div><span class="material-symbols-outlined">humidity_percentage</span> <span id="humidity">--</span>%</div>
+          <div><span class="material-symbols-outlined">air</span> <span id="wind">--</span> km/h</div>
+          <div><span class="material-symbols-outlined">speed</span> <span id="pressure">--</span> hPa</div>
+        </div>
+        <div class="ss-bar">
+          <span><span class="material-symbols-outlined">wb_twilight</span> Sunrise: <span id="sunriseTime">--:--</span></span>
+          <span><span class="material-symbols-outlined">dark_mode</span> Sunset: <span id="sunsetTime">--:--</span></span>
         </div>
       </div>
-      <div class="weather-visual" id="weatherVisual">
-        <!-- Animated GIF or AR visual appears here -->
-      </div>
+      <div class="weather-visual" id="weatherVisual"></div>
     </section>
   </main>
   <footer>
     <nav>
-      <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a>
-      <a href="forecast.html"><i class="fa-solid fa-calendar-week"></i> Forecast</a>
-      <a href="aqi.html"><i class="fa-solid fa-leaf"></i> Air Quality</a>
-      <a href="alerts.html"><i class="fa-solid fa-triangle-exclamation"></i> Alerts</a>
+      <a href="index.html" class="active"><span class="material-symbols-outlined">home</span> Home</a>
+      <a href="forecast.html"><span class="material-symbols-outlined">calendar_month</span> Forecast</a>
+      <a href="aqi.html"><span class="material-symbols-outlined">eco</span> Air Quality</a>
+      <a href="alerts.html"><span class="material-symbols-outlined">warning</span> Alerts</a>
+      <a href="settings.html"><span class="material-symbols-outlined">settings</span> Settings</a>
     </nav>
   </footer>
   <script src="app.js"></script>
