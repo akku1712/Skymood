@@ -28,4 +28,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
     el.addEventListener('change', saveSettings);
     el.addEventListener('input', saveSettings);
   });
+  // Optional: reload to apply language change everywhere
+  document.getElementById('settingsLang').addEventListener('change', () => location.reload());
 });
